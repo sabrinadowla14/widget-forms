@@ -1,0 +1,31 @@
+<div class="total-price">Widgets:{{formsCount}} &nbsp;&nbsp; Total Price: {{ totalPrice }}</div>
+<button mat-fab class="add-button" (click)="addForm()">
+    <mat-icon>add</mat-icon>
+</button>
+<div class="container">
+    <div *ngFor="let form of forms; let i = index" class="form-container">
+        <div class="data-name" *ngIf="widgetRes[i]">
+            <form class="example-form" [formGroup]="form">
+                <p [style.color]="widgetRes[i].color">{{widgetRes[i].name}}</p>
+                <mat-form-field>
+                    <label class="labelProp" for="name">Name</label>
+                    <input matInput placeholder="Name" formControlName="name">
+                </mat-form-field>
+                <mat-form-field>
+                    <label class="labelProp" for="color">Color</label>
+                    <input [style.color]="widgetRes[i].color" matInput placeholder="Color" formControlName="color">
+                </mat-form-field>
+                <mat-form-field>
+                    <label class="labelProp" for="price">Price</label>
+                    <input matInput placeholder="Price" formControlName="price">
+                </mat-form-field>
+                <mat-form-field>
+                    <label class="labelProp" for="id">Id</label>
+                    <input matInput placeholder="ID" formControlName="id">
+                </mat-form-field>
+                <button class="purple-delete-button" type="button"
+                    (click)="deleteForm(i, form.value.id)">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
