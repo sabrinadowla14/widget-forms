@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { WidgetServiceService } from '../widget-service.service';
+import { WidgetServiceService } from '../services/widget-service.service';
 
 @Component({
   selector: 'app-widget-forms',

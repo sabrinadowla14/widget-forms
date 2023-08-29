@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WidgetServiceService } from './widget-service.service';
+import { WidgetServiceService } from './services/widget-service.service';
 
 describe('WidgetServiceService', () => {
   let service: WidgetServiceService;
